@@ -1,1 +1,31 @@
-
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>素数判定装置</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#007bff" />
+    <link rel="icon" href="icon-192.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <h1>素数判定装置 🔢</h1>
+        <p>正の整数を入力してください。</p>
+        <input type="number" id="numberInput" placeholder="例: 17">
+        <button id="checkButton">判定！</button>
+        <p id="result"></p>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('✅ Service Worker 登録成功:', reg.scope))
+                    .catch(err => console.error('❌ Service Worker 登録失敗:', err));
+            });
+        }
+    </script>
+</body>
+</html>
